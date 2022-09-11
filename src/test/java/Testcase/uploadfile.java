@@ -3,12 +3,12 @@ package Testcase;
 import baselibrary.ExtentFactory;
 import baselibrary.Logger;
 import baselibrary.TestBase;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+//import org.apache.poi.ss.usermodel.Cell;
+//import org.apache.poi.ss.usermodel.Row;
+//import org.apache.poi.ss.usermodel.Sheet;
+//import org.apache.poi.ss.usermodel.Workbook;
+//import org.apache.poi.xssf.usermodel.XSSFSheet;
+//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -74,12 +74,12 @@ public class uploadfile
 
         FileInputStream fis= new FileInputStream(file);
 
-        XSSFWorkbook wb= new XSSFWorkbook(fis);
-        XSSFSheet sheet= wb.getSheet(sheetName);
-        sheet.getRow(rowvalue).createCell(col).setCellValue(cellvalue);
-
-        FileOutputStream fos= new FileOutputStream(file);
-        wb.write(fos);
+//        XSSFWorkbook wb= new XSSFWorkbook(fis);
+//        XSSFSheet sheet= wb.getSheet(sheetName);
+//        sheet.getRow(rowvalue).createCell(col).setCellValue(cellvalue);
+//
+//        FileOutputStream fos= new FileOutputStream(file);
+//        wb.write(fos);
 
     }
         @Test(priority = 1)

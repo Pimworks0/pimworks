@@ -18,11 +18,13 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+import org.openqa.selenium.WebElement;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import utilities.ReusableLibrary;
 
-public class TestBase{
+public class TestBase extends PimBase{
 
 	// Static global variable to handle the instance of webdriver
 	public static WebDriver driver = null;
@@ -31,27 +33,13 @@ public class TestBase{
 	static Properties properties = new Properties();
 	Logger logger;
 
-	public static WebDriver getWebDriver() throws IOException {
-		reader = new BufferedReader(new FileReader(propertyFilePath));
-		properties.load(reader);
 
-		String browser = properties.getProperty("browser");
-		if (driver == null) {
-			DriverFactory df = new DriverFactory();
-			driver = df.GetBrowser(browser);
-		}
-
-		launchApp();
-		return driver;
-	}
 
 	public static Properties getProperties() {
 		return properties;
 	}
 
-	public static void launchApp() {
-		driver.get(properties.getProperty("AppURL"));
-	}
+
 
 	public static int RandomNumber() {
 		Random robj = new Random();
@@ -81,7 +69,24 @@ public class TestBase{
 
 		return strcalendardate;
 	}
+	public static Properties getLocator() throws IOException {
+		ReusableLibrary reuse= new ReusableLibrary();
+		FileReader reader=new FileReader("src/test/java/test_data/locator.properties");
+	//	reuse.propertyloder("src/test/java/test_data/locator.properties");
+		Properties p=new Properties();
+		p.load(reader);
+		return  p;
+	}
+	public static void enterText(WebElement webelement, String text) {
+		try {
+			webelement.sendKeys(text);
+		}
+		catch (Exception e){
+			ExtentFactory.getInstance().getExtent().fail("Element is not visible to enter text"+e.getMessage());
 
+		}
+
+	}
 	public String getCurrentDate() {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
 		Date dt = new Date();

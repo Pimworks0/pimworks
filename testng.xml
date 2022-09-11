@@ -11,7 +11,7 @@
         <classes>
 <!--            <class name="Testcase.Account_Management"/>-->
 <!--            <class name="Testcase.UserManagement"/>-->
-            <class name="Testcase.Add_account"/>
+            <class name="Testcase.ProductDetails_verification"/>
         </classes>
     </test>
 </suite>
