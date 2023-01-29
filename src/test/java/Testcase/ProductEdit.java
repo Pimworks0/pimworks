@@ -14,6 +14,7 @@ import pageLibrary.LoginPage;
 import pageLibrary.UserManagementPage;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 
 public class ProductEdit extends TestBase {
@@ -25,7 +26,7 @@ public class ProductEdit extends TestBase {
     Logger logger = new Logger();
 
     @BeforeClass
-    public void StartTest() throws IOException, InterruptedException {
+    public void StartTest() throws Exception {
         this.driver = TestBase.getWebDriver();
         loginUserName = getProperties().getProperty("LoginUserName");
         loginPassword = getProperties().getProperty("LoginPassword");
@@ -41,7 +42,7 @@ public class ProductEdit extends TestBase {
         AccountManagement user = new AccountManagement(driver);
         // --------Login as admin
         new LoginPage(driver).login("envautotesting@gmail.com", getProperties().getProperty("LoginPassword"));
-        WebDriverWait wait = new WebDriverWait(driver, 100);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("searchProducts"))));
 
 

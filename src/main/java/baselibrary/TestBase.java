@@ -1,24 +1,19 @@
 package baselibrary;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
-
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 
-import org.openqa.selenium.WebElement;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -77,6 +72,10 @@ public class TestBase extends PimBase{
 		p.load(reader);
 		return  p;
 	}
+	public  static  void scrolltoexactelement(WebElement element){
+
+
+	}
 	public static void enterText(WebElement webelement, String text) {
 		try {
 			webelement.sendKeys(text);
@@ -87,6 +86,23 @@ public class TestBase extends PimBase{
 		}
 
 	}
+     public static String readExcel (String name, int row, int column, String Path)throws Exception {
+		FileInputStream fs = new FileInputStream(Path);
+		XSSFWorkbook workbook = new XSSFWorkbook(fs);
+		XSSFSheet sheet = workbook.getSheet(name);
+		return String.valueOf(sheet.getRow(row).getCell(column));
+	}
+	public static void clickOnElement( WebElement element) {
+		try {
+			element.click();
+		}
+		catch (Exception e){
+			ExtentFactory.getInstance().getExtent().fail("Element is not visible to click"+e.getMessage());
+
+		}
+
+	}
+
 	public String getCurrentDate() {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
 		Date dt = new Date();
@@ -122,6 +138,8 @@ public class TestBase extends PimBase{
 			try {
 				src = ((TakesScreenshot)TestBase.getWebDriver()).getScreenshotAs(OutputType.FILE);
 			} catch (IOException e) {
+				throw new RuntimeException(e);
+			} catch (Exception e) {
 				throw new RuntimeException(e);
 			}
 			SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyy HH-mm-ss");

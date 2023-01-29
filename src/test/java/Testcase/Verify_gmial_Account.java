@@ -17,6 +17,7 @@ import org.testng.annotations.Test;
 import pageLibrary.LoginPage;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Set;
@@ -48,9 +49,9 @@ public class Verify_gmial_Account   {
         WebDriver driver = new ChromeDriver(chrome_options);
 
         driver.get("https://mail.google.com/");
-        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='identifierId']"))).sendKeys("envtestauto18@gmail.com");
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='identifierId']"))).sendKeys("envtestauto18@gmail.com");
         driver.findElement(By.id("identifierNext")).click();
-        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='password']"))).sendKeys("Mobius@123");
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='password']"))).sendKeys("Mobius@123");
         driver.findElement(By.id("passwordNext")).click();
         System.out.println(driver.getTitle());
 

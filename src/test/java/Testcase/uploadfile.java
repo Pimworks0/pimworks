@@ -22,6 +22,7 @@ import pageLibrary.AccountManagement;
 import pageLibrary.LoginPage;
 
 import java.io.*;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class uploadfile
@@ -74,7 +75,7 @@ public class uploadfile
 
         FileInputStream fis= new FileInputStream(file);
 
-//        XSSFWorkbook wb= new XSSFWorkbook(fis);
+ //       XSSFWorkbook wb= new XSSFWorkbook(fis);
 //        XSSFSheet sheet= wb.getSheet(sheetName);
 //        sheet.getRow(rowvalue).createCell(col).setCellValue(cellvalue);
 //
@@ -92,7 +93,7 @@ public class uploadfile
             // --------Login as admin
             new LoginPage(driver).login("envautotesting@gmail.com", getProperties().getProperty("LoginPassword"));
 
-            WebDriverWait wait = new WebDriverWait(driver, 100);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("ProductCreation"))));
             //   UserManagementPage userManagement= new UserManagementPage(driver);
             user.moveTosidemenu();

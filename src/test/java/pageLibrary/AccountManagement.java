@@ -33,7 +33,7 @@ public class AccountManagement extends ReusableLibrary {
     @FindBy(xpath="//a[normalize-space()='Account Management']")
     WebElement AccountManagement;
 
-    @FindBy(xpath="//a[@href='/PIMWorks_QA/Products']//*[name()='svg']//*[name()='path']")
+    @FindBy(xpath="//li[@class='site-menu-item has-sub Dashboard Reports BusinessReports']//a[@class='mm-next']")
     WebElement sidemenu;
 
     @FindBy(xpath = "//input[@role='textbox']")

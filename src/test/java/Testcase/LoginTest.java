@@ -20,7 +20,7 @@ public class LoginTest extends TestBase {
 	String loginPassword=null;
 	
 	@BeforeClass
-	public void StartTest() throws IOException, InterruptedException {
+	public void StartTest() throws Exception {
 		this.driver = TestBase.getWebDriver();
 		
 		loginUserName=getProperties().getProperty("LoginUserName");

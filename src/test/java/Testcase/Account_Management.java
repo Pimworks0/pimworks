@@ -5,11 +5,7 @@ import baselibrary.Logger;
 import baselibrary.TestBase;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.ActionChainExecutor;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.touch.LongPressAction;
-import org.openqa.selenium.interactions.touch.TouchActions;
-import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -19,6 +15,7 @@ import pageLibrary.LoginPage;
 import pageLibrary.AccountManagement;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class Account_Management extends TestBase {
 
@@ -28,7 +25,7 @@ public class Account_Management extends TestBase {
     private WebDriver driver;
     Logger logger = new Logger();
     @BeforeClass
-    public void StartTest() throws IOException, InterruptedException {
+    public void StartTest() throws Exception {
         this.driver = TestBase.getWebDriver();
 
         loginUserName = getProperties().getProperty("LoginUserName");
@@ -51,7 +48,7 @@ public class Account_Management extends TestBase {
         // --------Login as admin
         new LoginPage(driver).login(getProperties().getProperty("LoginUserName"), getProperties().getProperty("LoginPassword"));
 
-                WebDriverWait wait = new WebDriverWait(driver, 300);
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(300));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//i[@id='1'])[1]"))));
 //        // --------------move to the side menu ---------------
         user.moveToUserManagement();
@@ -183,7 +180,7 @@ public void check_unchec_module() throws InterruptedException {
         AccountManagement user = new AccountManagement(driver);
         new LoginPage(driver).login("demo35@gmail.com", getProperties().getProperty("LoginPassword"));
         Thread.sleep(5000);
-        WebDriverWait wait = new WebDriverWait(driver, 50);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("ProductCreation"))));
 //        // --------------move to the side menu ---------------
         Thread.sleep(2000);
@@ -206,7 +203,7 @@ public void check_unchec_module() throws InterruptedException {
        AccountManagement user = new AccountManagement(driver);
         // --------Login as admin
         new LoginPage(driver).login(getProperties().getProperty("LoginUserName"), getProperties().getProperty("LoginPassword"));
-        WebDriverWait wait = new WebDriverWait(driver, 100);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//i[@id='1'])[1]"))));
         // --------------move to the side menu ---------------
         user.moveToUserManagement();

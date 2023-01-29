@@ -16,6 +16,7 @@ import pageLibrary.LoginPage;
 import pageLibrary.UserManagementPage;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class Channel extends TestBase {
 
@@ -26,7 +27,7 @@ public class Channel extends TestBase {
     Logger logger = new Logger();
 
     @BeforeClass
-    public void StartTest() throws IOException, InterruptedException {
+    public void StartTest() throws Exception {
         this.driver = TestBase.getWebDriver();
         loginUserName = getProperties().getProperty("LoginUserName");
         loginPassword = getProperties().getProperty("LoginPassword");
@@ -45,7 +46,7 @@ public class Channel extends TestBase {
         AccountManagement user = new AccountManagement(driver);
         // --------Login as admin
         new LoginPage(driver).login("envautotesting@gmail.com", getProperties().getProperty("LoginPassword"));
-        WebDriverWait wait = new WebDriverWait(driver, 100);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("ProductCreation"))));
         UserManagementPage userManagement= new UserManagementPage(driver);
         user.moveTosidemenu();
@@ -78,7 +79,7 @@ public class Channel extends TestBase {
         act.sendKeys(Keys.PAGE_DOWN);
         driver.findElement(By.xpath(" //input[@id='saveButton']")).click();
         Thread.sleep(25000);
-        WebDriverWait wait2= new WebDriverWait(driver,1000);
+        WebDriverWait wait2= new WebDriverWait(driver,Duration.ofSeconds(1000));
         wait2.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@class='site-menu-icon fa fa-dashboard']"))));
         Thread.sleep(5000);
         ExtentFactory.getInstance().getExtent().pass(" user should choose channel and click channel Checkbox and save button");

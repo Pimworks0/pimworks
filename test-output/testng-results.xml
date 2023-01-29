@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[<b style="color:blue"> INFO : </b>User name entered]]>
@@ -11,16 +11,12 @@
       <![CDATA[<b style="color:blue"> INFO : </b>login submit is successful]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18454" started-at="2022-04-25T10:02:17Z" finished-at="2022-04-25T10:02:36Z">
+  <suite started-at="2023-01-19T11:15:57 IST" name="All Test Suite" finished-at="2023-01-19T11:18:24 IST" duration-ms="147249">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18454" started-at="2022-04-25T10:02:17Z" finished-at="2022-04-25T10:02:36Z">
-      <class name="Testcase.LoginTest">
-        <test-method status="PASS" signature="StartTest()[pri:0, instance:Testcase.LoginTest@371a67ec]" name="StartTest" is-config="true" duration-ms="7253" started-at="2022-04-25T10:02:17Z" finished-at="2022-04-25T10:02:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StartTest -->
-        <test-method status="PASS" signature="loginPIM()[pri:0, instance:Testcase.LoginTest@371a67ec]" name="loginPIM" duration-ms="11189" started-at="2022-04-25T10:02:25Z" finished-at="2022-04-25T10:02:36Z">
+    <test started-at="2023-01-19T11:15:57 IST" name="PIM Work  Application Test Cases" finished-at="2023-01-19T11:18:24 IST" duration-ms="147249">
+      <class name="Testcase.Bulk_Upload_Attribute">
+        <test-method signature="createAttributeGroup()[pri:1, instance:Testcase.Bulk_Upload_Attribute@18078bef]" started-at="2023-01-19T11:15:59 IST" name="createAttributeGroup" finished-at="2023-01-19T11:17:46 IST" duration-ms="107888" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[<b style="color:blue"> INFO : </b>User name entered]]>
@@ -32,8 +28,12 @@
               <![CDATA[<b style="color:blue"> INFO : </b>login submit is successful]]>
             </line>
           </reporter-output>
-        </test-method> <!-- loginPIM -->
-      </class> <!-- Testcase.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- createAttributeGroup -->
+        <test-method signature="BulkAttributeCreation()[pri:2, instance:Testcase.Bulk_Upload_Attribute@18078bef]" started-at="2023-01-19T11:17:46 IST" name="BulkAttributeCreation" finished-at="2023-01-19T11:18:24 IST" duration-ms="37503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BulkAttributeCreation -->
+      </class> <!-- Testcase.Bulk_Upload_Attribute -->
+    </test> <!-- PIM Work  Application Test Cases -->
+  </suite> <!-- All Test Suite -->
 </testng-results>

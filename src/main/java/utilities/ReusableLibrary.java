@@ -71,17 +71,6 @@ public class ReusableLibrary  extends TestBase {
 	}
 
 
-	public static void typevalue(WebElement element) {
-		try {
-
-		}
-
-		catch (Exception e) {
-			System.out.println("Element is not enabled");
-			e.printStackTrace();
-		}
-	}
-
 
 
 	public static Properties propertyloder(String filepath) {
