@@ -11,7 +11,22 @@
         <classes>
 <!--            <class name="Testcase.Account_Management"/>-->
 <!--            <class name="Testcase.UserManagement"/>-->
-            <class name="Testcase.Add_account"/>
+<!--            <class name="Testcase.ProductDetails_verification"/>-->
+<!--            <class name="Testcase.Min_Max_Check"/>-->
+<!--                 <class name="Testcase.WithOutMinMax"/>-->
+             <class name="Testcase.Bulk_Upload_Attribute"/>
+<!--            <class name="Testcase.Min_Max_SM"/>-->
+<!--            <class name="Testcase.Product_Page_Operations"/>-->
+ <!--                 <class name="Testcase.Attribute_Rule_Creation"/>-->
+<!--               <class name="Testcase.Attribute_Rule_Frmla_2"/>-->
+<!--               <class name="Testcase.Attribute_Rule_Frmla_3"/>-->
+<!--            <class name="Testcase.Attribute_Rule_Frmla_4"/>-->
+<!--            <class name="Testcase.Attribute_Rule_Frmla_5"/>-->
+<!--            <class name="Testcase.Attribute_Rule_Frmla_6"/>-->
+
+
+
+
         </classes>
     </test>
 </suite>

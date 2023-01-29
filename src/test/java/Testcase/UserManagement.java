@@ -15,6 +15,7 @@ import pageLibrary.LoginPage;
 import pageLibrary.UserManagementPage;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class UserManagement extends TestBase {
 
@@ -28,7 +29,7 @@ public class UserManagement extends TestBase {
 
 
     @BeforeClass
-    public void StartTest() throws IOException, InterruptedException {
+    public void StartTest() throws Exception {
         this.driver = TestBase.getWebDriver();
 
         loginUserName = getProperties().getProperty("LoginUserName");
@@ -49,7 +50,7 @@ public class UserManagement extends TestBase {
 
         Thread.sleep(4000);
 
-        WebDriverWait wait = new WebDriverWait(driver, 200);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(200));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//i[@id='1'])[1]"))));
         // --------------move to the side menu ---------------
         Thread.sleep(4000);

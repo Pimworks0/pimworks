@@ -43,6 +43,8 @@ public class ListenersImplementation implements ITestListener {
 			src = ((TakesScreenshot)TestBase.getWebDriver()).getScreenshotAs(OutputType.FILE);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
 		}
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyy HH-mm-ss");
 		Date date = new Date();
@@ -59,7 +61,6 @@ public class ListenersImplementation implements ITestListener {
 		}
 		ExtentFactory.getInstance().getExtent().addScreenCaptureFromPath(screenshotPath, "Test case failure screenshot");
 		ExtentFactory.getInstance().removeExtentObject();
-
 
 
 	}
