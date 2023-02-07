@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="PIM Work  Application Test Cases(failed)">
     <classes>
-      <class name="Testcase.Attribute_Rule_Creation">
+      <class name="Testcase.ProductDetails_verification">
         <methods>
-          <include name="RuleAddStep2_3"/>
+          <include name="createAttributes"/>
+          <include name="StartTest"/>
+          <include name="addcorrectdetails"/>
           <include name="addAtributestoTaxonomy"/>
-          <include name="SelectChannelHealthSubscriptions"/>
-          <include name="VendorProfileFileUpload"/>
-          <include name="addProduct"/>
+          <include name="addWrongdetails"/>
         </methods>
-      </class> <!-- Testcase.Attribute_Rule_Creation -->
+      </class> <!-- Testcase.ProductDetails_verification -->
     </classes>
   </test> <!-- PIM Work  Application Test Cases(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

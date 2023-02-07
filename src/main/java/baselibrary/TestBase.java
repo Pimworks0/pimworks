@@ -65,7 +65,7 @@ public class TestBase extends PimBase{
 		return strcalendardate;
 	}
 	public static Properties getLocator() throws IOException {
-		ReusableLibrary reuse= new ReusableLibrary();
+		//ReusableLibrary reuse= new ReusableLibrary();
 		FileReader reader=new FileReader("src/test/java/test_data/locator.properties");
 	//	reuse.propertyloder("src/test/java/test_data/locator.properties");
 		Properties p=new Properties();

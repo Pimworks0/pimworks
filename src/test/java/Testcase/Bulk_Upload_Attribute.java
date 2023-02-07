@@ -85,8 +85,7 @@ public class Bulk_Upload_Attribute extends TestBase {
         driver.findElement(By.xpath(getLocator().getProperty("AttributeNoClick"))).click();
         ExtentFactory.getInstance().getExtent().pass("User click Created group No of Attributes hyperlink");
         Thread.sleep(5000);
-         driver.findElement(By.xpath("//div[@class='qq-uploader-selector qq-uploader single-uploader']")).click();
-
+        driver.findElement(By.xpath("//div[@class='qq-uploader-selector qq-uploader single-uploader']")).click();
         c_pump_mr = new File(".//src//test//java//test_data//Bulk upload Attributes.xlsx").getCanonicalPath();
         System.out.println(c_pump_mr);
         uploadFile(c_pump_mr);
